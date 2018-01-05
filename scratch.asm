@@ -1,16 +1,29 @@
-section .data
+;section .text
+;org 0x100
+	;mov	ah, 0x9
+	;mov	dx, hello
+	;int	0x21
 
-hello_world db "HOGE", 0x0a
+	;mov	ax, 0x4c00
+	;int	0x21
 
-section .text
-global start
+;section .data
+;hello:	db 'Hello, world!', 13, 10, '$'
 
-start:
-mov rax, 0x2000004
-mov rdi, 1
-mov rsi, hello_world
-mov rdx, 14
-syscall
-mov rax, 0x2000001
-mov rdi, 0
-syscall
+CODE	SEGMENT
+	ASSUME	DS:CODE,CS:CODE,ES:CODE,SS:CODE
+	.186
+	ORG	100h
+
+START:
+    mov	ah,2
+	mov	dl,'A'
+	int	21h
+
+	mov	ax,4c00h
+	int	21h
+    ;ENDS
+    ;END	START
+CODE	ENDS
+	END	START
+;hello:	db 'Hello, world!', 13, 10, '$'
