@@ -14,7 +14,7 @@ nasm -f macho64 -o sample.o  scratch.asm && ld -o sample.out sample.o && ./sampl
 
 base document: http://wisdom.sakura.ne.jp/programming/asm/index.html
 
-current : http://wisdom.sakura.ne.jp/programming/asm/assembly5.html
+current : http://wisdom.sakura.ne.jp/programming/asm/assembly6.html
 
 use DOSBox
 + https://www.dosbox.com/
