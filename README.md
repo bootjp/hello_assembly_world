@@ -12,23 +12,21 @@ nasm -f macho64 -o sample.o  scratch.asm && ld -o sample.out sample.o && ./sampl
 
 ## masm
 
-document: http://wisdom.sakura.ne.jp/programming/asm/index.html
+base document: http://wisdom.sakura.ne.jp/programming/asm/index.html
 
-current : http://wisdom.sakura.ne.jp/programming/asm/assembly3.html
+current : http://wisdom.sakura.ne.jp/programming/asm/assembly5.html
 
-use dosbox
+use DOSBox
 + https://www.dosbox.com/
    
 + 8086 Assembler
 
 * ToDo  
-  [] dosbox change keyboard layout 
+  + [ ] DOSBox change keyboard layout 
      + [official documents](https://www.dosbox.com/DOSBoxManual.html#KeyboardLayout)
      + [question](https://superuser.com/questions/1080381/keyboard-layout-setting-in-dosbox-has-no-effect)
-     + [ ] dos box build for high Sierra
-
-# 
-* japanese keyboard layout = 106
+     + [ ] DOSBox build for high Sierra
+     * japanese keyboard layout = 106
 
 
 ## study
@@ -94,4 +92,15 @@ AX=1234...（略
 
 注意すべきはバイト毎に割り当てるということであり、単純に `4321` とはならない `3412` となる。
 
-### 8086のアドレスについてtuite
+### 8086のアドレスについて
+
+* アセンブリであっても物理アドレスへのアクセスの指定はできない
+* セグメント方式が採用されている
+* セグメントに対してオフセットがある
+  + これらを計算することで物理アドレスを導き出すことができる
+  * これらをセグメントベースという
+  * セグメントベースは16進数の5桁で表されるため0-f * 5 = 1MB
+  * オフセットアドレスは4桁16進数 = 64KB
+  
+### セグメントレジスタ
+
