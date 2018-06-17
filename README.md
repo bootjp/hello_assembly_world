@@ -14,7 +14,7 @@ nasm -f macho64 -o sample.o  scratch.asm && ld -o sample.out sample.o && ./sampl
 
 base document: http://wisdom.sakura.ne.jp/programming/asm/index.html
 
-current : http://wisdom.sakura.ne.jp/programming/asm/assembly6.html
+current : http://wisdom.sakura.ne.jp/programming/asm/assembly7.html
 
 use DOSBox
 + https://www.dosbox.com/
@@ -110,4 +110,15 @@ AX=1234...（略
   * オフセットアドレスは4桁16進数 = 64KB
   
 ### セグメントレジスタ
+ * セグメントレジスタはセグメントアドレスを指定するのに用いられる
+ ＊ メモリアクセス時コンピュータはセグメントレジスタ経由で参照をする
+ * セグメントレジスタは合計4つ存在しそれぞれに専用の役割が存在する(64bitでは?）
+ * セグメントレジスタはCS（コード）, DS（データ）, ES（エクストラ), SS（スタック）の4つがあり，CSではコード・レジスタとなる
+ * CSレジスタは自分自身のセグメントレジスタを指す
+   - 実行中の機械語を格納しているアドレスである
+   - CPUが機械語を実行する際に使う
+ * DSレジスタはデータを格納する専用のセグメントを指す
+ * ESレジスタはDSレジスタのようなものでデータ以外にセグメントが必要なときに使う
+ * SSレジスタはスタック操作に使用する
+ 
 
