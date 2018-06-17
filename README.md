@@ -27,6 +27,13 @@ use DOSBox
      + [question](https://superuser.com/questions/1080381/keyboard-layout-setting-in-dosbox-has-no-effect)
      + [ ] DOSBox build for high Sierra
      * japanese keyboard layout = 106
+* dosbox howt to use.
+  ```dos
+  mount c ~/dosbox # ~/doxbosはosx環境上
+  c:\
+  debug
+  ```
+  
 
 
 ## study
